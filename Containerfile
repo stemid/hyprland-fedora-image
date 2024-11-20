@@ -12,6 +12,6 @@ RUN dnf -y install \
     hwdata libdisplay-info-devel libliftoff-devel 'dnf5-command(builddep)' && \
     dnf -y builddep hyprland && \
     pushd /root && curl -LO https://github.com/hyprwm/Hyprland/releases/latest/download/source-v0.45.2.tar.gz && \
-    sudo tar -xvaf source-v0.45.2.tar.gz && pushd /root/hyprland-source && \
-    sudo meson _build && sudo ninja -C _build && sudo ninja -C _build install && \
+    tar --no-overwrite-dir -xvaf source-v0.45.2.tar.gz && pushd /root/hyprland-source && \
+    meson _build && ninja -C _build && sudo ninja -C _build install && \
     sudo cp example/hyprland.desktop /usr/share/wayland-sessions/
