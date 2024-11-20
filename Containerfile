@@ -11,7 +11,7 @@ RUN dnf -y install \
     mesa-libgbm-devel xcb-util-renderutil-devel \
     hwdata libdisplay-info-devel libliftoff-devel 'dnf5-command(builddep)' && \
     dnf -y builddep hyprland && \
-    pushd /tmp && curl -LO https://github.com/hyprwm/Hyprland/releases/latest/download/source-v0.45.2.tar.gz && \
-    tar -xvaf source-v0.45.2.tar.gz && pushd /tmp/hyprland-source && \
+    pushd /root && curl -LO https://github.com/hyprwm/Hyprland/releases/latest/download/source-v0.45.2.tar.gz && \
+    tar -xvaf source-v0.45.2.tar.gz && pushd /root/hyprland-source && \
     meson _build && ninja -C _build && sudo ninja -C _build install && \
     cp example/hyprland.desktop /usr/share/wayland-sessions/
