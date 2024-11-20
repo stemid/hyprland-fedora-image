@@ -1,0 +1,40 @@
+
+name: Build
+on:
+  #schedule:
+  #  - cron: "21 21 * * *"
+  push:
+    branches: ["main"]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: "fedora-atomic-hyprland"
+  IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
+  REGISTRY_USER: ${{ github.actor }}
+  REGISTRY_PASSWORD: ${{ github.token }}
+
+
+jobs:
+  podman-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4.1.1
+
+      - name: Build container image
+        uses: redhat-actions/buildah-build@v2.13
+        with:
+          context: "."
+          containerfiles: Containerfile
+          image: ${{ env.IMAGE_NAME }}
+          layers: false
+          oci: true
+
+      - name: Push to ghcr.io
+        uses: redhat-actions/push-to-registry@v2.6
+        with:
+          image: ${{ env.IMAGE_NAME }}
+          tags: "latest"
+          registry: ${{ env.IMAGE_REGISTRY }}
+          username: ${{ env.REGISTRY_USER }}
+          password: ${{ env.REGISTRY_PASSWORD }}
