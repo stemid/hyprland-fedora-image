@@ -14,4 +14,5 @@ RUN dnf -y install \
     pushd Hyprland && mkdir -p --mode=0755 /var/usrlocal && \
     mkdir -p --mode=0755 /var/usrlocal/{include,share,bin,etc,games,lib,man,sbin,src} && \
     meson _build && ninja -C _build && sudo ninja -C _build install && \
-    sudo cp example/hyprland.desktop /usr/share/wayland-sessions/
+    sudo cp example/hyprland.desktop /usr/share/wayland-sessions/ && \
+    sudo cp /usr/local/bin/Hyprland /usr/bin/Hyprland
