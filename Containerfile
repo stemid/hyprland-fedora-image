@@ -9,7 +9,7 @@ RUN dnf -y install \
     libinput-devel xcb-util-wm-devel xorg-x11-server-Xwayland-devel \
     mesa-libgbm-devel xcb-util-renderutil-devel \
     hwdata libdisplay-info-devel libliftoff-devel 'dnf5-command(builddep)' && \
-    sudo dnf -y builddep hyprland && \
+    sudo dnf -y builddep hyprland && sudo dnf -y install hyprland hyprpaper && \
     rm -rf ./Hyprland && git clone -b v0.45.2 https://github.com/hyprwm/Hyprland && \
     pushd Hyprland && mkdir -p --mode=0755 /var/usrlocal && \
     mkdir -p --mode=0755 /var/usrlocal/{include,share,bin,etc,games,lib,man,sbin,src} && \
