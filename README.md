@@ -28,7 +28,7 @@ Reboot and select this new layer in Grub to test it.
 
 ## Build it yourself
 
-You can also build this yourself on your local computer by running buildah, push it to a registry of your choice, and boot from it. Or maybe even rebase to it locally with ``bootc switch localhost/hyprland-fedora-image:latest``, not tested by me.
+You can also build this yourself on your local computer by running buildah, push it to a registry of your choice, and boot from it.
 
     buildah bud -f Containerfile -t hyprland-fedora-image .
 
