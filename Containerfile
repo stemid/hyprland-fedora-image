@@ -1,4 +1,3 @@
-#FROM quay.io/fedora/fedora-coreos:testing AS builder
 FROM quay.io/fedora/fedora-sway-atomic:41
 
 RUN dnf -y install \
