@@ -26,6 +26,14 @@ Then fetch this image and switch to it.
 
 Reboot and select this new layer in Grub to test it.
 
+## Build it yourself
+
+You can also build this yourself on your local computer by running buildah, push it to a registry of your choice, and boot from it. Or maybe even rebase to it locally with ``bootc switch localhost/hyprland-fedora-image:latest``, not tested by me.
+
+    buildah bud -f Containerfile -t hyprland-fedora-image .
+
+To build the latest Hyprland version edit the Containerfile on the line with ``git clone -b v0.45.2``, I won't make any effort to keep this repo updated.
+
 # Disclaimer
 
 This image installs hyprland from Fedora packages, which is only a couple releases behind. Then it builds the latest Hyprland from git source, and overwrites the ``/usr/bin/Hyprland`` binary with the newly built one.
