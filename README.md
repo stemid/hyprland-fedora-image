@@ -6,6 +6,8 @@ The image includes no hyprland config, so you should prepare that in your home d
 
 ## Install bootc
 
+On any Fedora Atomic 41 system you can do this.
+
     rpm-ostree install bootc
 
 Reboot into this new layer.
