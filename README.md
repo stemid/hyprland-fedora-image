@@ -14,7 +14,7 @@ Reboot into this new layer.
 
     systemctl reboot
 
-## Switch to this image
+## Switch to my Hyprland image
 
 I suggest pinning your current layer as a backup.
 
