@@ -12,6 +12,8 @@ On any Fedora Atomic 41 system you can do this.
 
 Reboot into this new layer.
 
+    systemctl reboot
+
 ## Switch to this image
 
 I suggest pinning your current layer as a backup.
