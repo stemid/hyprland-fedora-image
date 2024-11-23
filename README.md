@@ -38,4 +38,4 @@ To build the latest Hyprland version edit the Containerfile on the line with ``g
 
 This image installs hyprland from Fedora packages, which is only a couple releases behind. Then it builds the latest Hyprland from git source, and overwrites the ``/usr/bin/Hyprland`` binary with the newly built one.
 
-If I knew more about Atomic images I think it would be smarter to install only the built Hyprland under /usr/local, but I couldn't figure out how to install something in a safe path that would be retained after boot. I don't think it's a good idea to modify the installed hyprland package in this way. Please contact me if you can help.
+After talking to some skilled people online I realize that I need to install Hyprland under /usr, not /usr/local. I already tried setting DESTDIR=/usr but ended up with /usr/usr, and setting DESTDIR=/ ended up using the default /usr/local so I need to figure this one out.
