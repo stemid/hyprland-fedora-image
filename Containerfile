@@ -15,5 +15,4 @@ RUN dnf -y install \
     meson setup --prefix=/usr _build && ninja -C _build && ninja -C _build install && \
     dnf -y history undo 2 && dnf -y install hyprpaper && \
     cp example/hyprland.desktop /usr/share/wayland-sessions/ && \
-    cp /usr/local/bin/Hyprland /usr/bin/Hyprland && \
     dnf -y autoremove && ostree container commit
