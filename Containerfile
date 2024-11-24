@@ -1,7 +1,7 @@
 FROM quay.io/fedora/fedora-sway-atomic:41
 
 RUN dnf -y install \
-    curl git tmux vim 'dnf5-command(builddep)' && \
+    curl git tmux vim hyprpaper 'dnf5-command(builddep)' && \
     dnf -y builddep hyprland && \
     rm -rf ./Hyprland && git clone -b v0.45.2 https://github.com/hyprwm/Hyprland && \
     pushd Hyprland && mkdir -p --mode=0755 /var/usrlocal && \
