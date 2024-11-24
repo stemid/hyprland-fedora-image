@@ -13,6 +13,6 @@ RUN dnf -y install \
     pushd Hyprland && mkdir -p --mode=0755 /var/usrlocal && \
     mkdir -p --mode=0755 /var/usrlocal/{include,share,bin,etc,games,lib,man,sbin,src} && \
     meson setup --prefix=/usr _build && ninja -C _build && ninja -C _build install && \
-    dnf -y history undo 2 && dnf -y install hyprpaper && \
+    dnf -y history undo last && dnf -y install hyprpaper && \
     cp example/hyprland.desktop /usr/share/wayland-sessions/ && \
     dnf -y autoremove && ostree container commit
