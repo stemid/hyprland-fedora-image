@@ -33,3 +33,9 @@ You can also build this yourself on your local computer by running buildah, push
     buildah bud -f Containerfile -t hyprland-fedora-image .
 
 To build the latest Hyprland version edit the Containerfile on the line with ``git clone -b v0.45.2``, I won't make any effort to keep this repo updated.
+
+## Revert back
+
+When you're done with this image you can either boot the pinned one you had from before, and next time you run ``rpm-ostree upgrade`` this image should be your first choice in Grub.
+
+Or you can run ``sudo rpm-ostree rebase -b fedora/41/x86_64/sericea`` to immediately rebase back to Atomic Sway for example, and reboot to see this image is now your first choice in Grub.
